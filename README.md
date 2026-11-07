@@ -1,4 +1,5 @@
 PROYECTO DESARROLLO DE SOFTWARE
+Inicializar el protecto en git:
 git init
 git add README.md
 git commit -m "first commit"
