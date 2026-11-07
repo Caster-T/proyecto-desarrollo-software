@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend   # Busca automáticamente el archivo ./frontend/Dockerfile
+    ports:
+      - "80:80"
+
+  backend:
+    build: ./backend    # Busca automáticamente el archivo ./backend/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=usuario_dev
+      - DB_PASSWORD=clave_super_segura
+
+  db:
+    image: postgres:16
+    environment:
+      - POSTGRES_USER=usuario_dev
+      - POSTGRES_PASSWORD=clave_super_segura
+      - POSTGRES_DB=mi_base_datos
