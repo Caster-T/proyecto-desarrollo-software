@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla Base HTML5</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 1. NAVBAR DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <a href="#" class="logo">MiSitioWeb</a>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="#componentes">Componentes</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- 2. HEADER / HERO -->
+        <header class="hero" id="inicio">
+            <h1 class="titulo">Estructura Base HTML & CSS</h1>
+            <p>Una plantilla limpia con todos los elementos HTML esenciales visualmente estilizados.</p>
+        </header>
+
+        <!-- 3. SECCIÓN DE TEXTO Y LISTAS -->
+        <section id="componentes">
+            <h2>Listas y Tipografía</h2>
+            <p>Este es un párrafo básico que muestra la tipografía predeterminada y el espacio de lectura.</p>
+            
+            <div class="lists-wrapper" style="margin-top: 1.5rem;">
+                <div>
+                    <h3>Lista Desordenada (ul)</h3>
+                    <ul class="primer-lista"></ul>
+                    <button id="btn-ant" class="ant"><</button>
+                    <span class="contador-pag">Pag 1</span>
+                    <button id="btn-sig" class="sig">></button>
+                </div>
+                <div>
+                    <h3>Lista Ordenada (ol)</h3>
+                    <olv class="segunda-lista">
+                        <li>Primer paso</li>
+                        <li>Segundo paso</li>
+                        <li>Tercer paso</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN DE BOTONES -->
+        <section class="lista-botones">
+            <h2>Botones e Interacción</h2>
+            <p>Diferentes tipos de botones y enlaces de acción:</p>
+            <div class="btn-group">
+                <button class="btn btn-primary">Botón Primario</button>
+                <button class="btn btn-secondary">Botón Secundario</button>
+                <a href="https://www.lipsum.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Enlace Externo</a>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN GRID Y TARJETAS (DIVS + IMÁGENES CON LINKS) -->
+        <section id="grid">
+            <h2>Cuadrícula (Grid) y Tarjetas de Contenido</h2>
+            <div class="grid-container">
+                
+                <!-- Tarjeta 1 -->
+                <div class="card">
+                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
+                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
+                    </a>
+                    <div class="card-body">
+                        <h3>Tarjeta 1</h3>
+                        <p>Haz clic en la imagen superior para abrir la fuente del recurso en una nueva pestaña.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="card">
+                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
+                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
+                    </a>
+                    <div class="card-body">
+                        <h3>Tarjeta 2</h3>
+                        <p>Las tarjetas utilizan CSS Grid para organizarse dinámicamente según el tamaño de pantalla.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="card">
+                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
+                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
+                    </a>
+                    <div class="card-body">
+                        <h3>Tarjeta 3</h3>
+                        <p>Contenedores estructurados mediante divs con bordes redondeados y efectos hover.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. TABLAS -->
+        <section>
+            <h2>Tabla de Datos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Usuario Ejemplo</td>
+                        <td>Desarrollador</td>
+                        <td>Activo</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Diseñador Base</td>
+                        <td>UI/UX</td>
+                        <td>Pendiente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 7. FORMULARIOS DE ENTRADA -->
+        <section id="contacto">
+            <h2>Formulario Básico</h2>
+            <form action="#" method="POST" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input name="Nombre" type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre...">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" class="form-control" placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="Mensaje" id="mensaje" class="form-control" rows="4" placeholder="Escribe un mensaje..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar Formulario</button>
+            </form>
+        </section>
+
+    </div>
+
+    <!-- 8. PIE DE PÁGINA -->
+    <footer class = "footer" id="footer">
+        <p>&copy; 2026 MiSitioWeb. Plantilla base para desarrollo e integración JS.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
