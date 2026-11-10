@@ -1,32 +1,16 @@
-// ==========================================
-// 1. VERIFICAR QUE EL ARCHIVO ESTÁ CONECTADO
-// ==========================================
-// console.log() imprime mensajes en la consola del navegador (F12)
-console.log("¡El archivo script.js se cargó correctamente!");
 
+console.log("¡El archivo elem_lista.js se cargó correctamente!");
 
-// ==========================================
-// 2. SELECCIONAR ELEMENTOS DEL HTML (DOM)
-// ==========================================
-// Usamos document.querySelector() pasando el selector CSS (.clase, #id, etiqueta)
-const tituloPrincipal = document.querySelector(".titulo");
 const primerBoton = document.querySelector(".btn-primary");
 const segundoBoton = document.querySelector(".btn-secondary");
 const primerLista = document.querySelector(".primer-lista");
-
-// ==========================================
-// 3. EVENTOS: ESCUCHAR ACCIONES DEL USUARIO
-// ==========================================
-// addEventListener escucha cuando el usuario hace un clic, pasa el mouse, escribe, etc.
-
-//VARIABLES PARA LA LISTA MULTI-PAGINA
 const botonAnt = document.querySelector(".ant");
 const botonSig = document.querySelector(".sig");
 const contadorPag = document.querySelector(".contador-pag");
 const LIMITE = 5;
 const items = [];
 let paginaActual = 1;
-
+let contador = 0;
 
 function renderizar() {
     primerLista.innerHTML = "";
@@ -74,9 +58,6 @@ botonSig.addEventListener("click", function() {
 
 renderizar();
 
-
-let contador = 0;
-
 primerBoton.addEventListener("click", function() {
     
     // Cambiamos el texto del h1 cuando se hace clic en el botón
@@ -104,25 +85,3 @@ segundoBoton.addEventListener("click", function() {
 
     renderizar();
 });
-
-
-
-// ==========================================
-// 4. INTERACTUAR CON UN INPUT (FORMULARIO)
-// ==========================================
-const todosLosInputs = document.querySelectorAll("input");
-
-todosLosInputs.forEach(function(inputIndividual) {
-    inputIndividual.addEventListener("input", function(e) {
-        // e.target contiene el input exacto en el que el usuario está escribiendo
-        console.log(`Escribiendo en ${e.target.name || e.target.type}:`, e.target.value);
-    });
-});
-
-const mensaje = document.querySelector("textarea");
-
-if (mensaje) {
-    mensaje.addEventListener("input", function(e){
-        console.log(`El usuario esta escribiendo en ${e.target.name}:`,e.target.value);
-    });
-}
