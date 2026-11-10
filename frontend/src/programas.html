@@ -13,8 +13,7 @@
     <nav class="navbar">
         <a href="#" class="logo">MiSitioWeb</a>
         <ul class="nav-links">
-            <li><a href="#grid">Grid</a></li>
-            <li><a href="./admin.html">Pagina de administrador</a></li>
+            <li><a href="#inicio" class="active">Inicio</a></li>
             <li><a href="./index.html">Pagina principal</a></li>
             <button id="btn-admin" class="btn">☰</button>
         </ul>
@@ -28,47 +27,38 @@
             <p>Una plantilla limpia con todos los elementos HTML esenciales visualmente estilizados.</p>
         </header>
 
-
-
-
         <!-- 5. SECCIÓN GRID Y TARJETAS (DIVS + IMÁGENES CON LINKS) -->
-        <section id="grid">
-            <h2>Cuadrícula (Grid) y Tarjetas de Contenido</h2>
-            <div class="grid-container">
-                
-                <!-- Tarjeta 1 -->
-                <div class="card">
-                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
-                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
-                    </a>
-                    <div class="card-body">
-                        <h3>Tarjeta 1</h3>
-                        <p>Haz clic en la imagen superior para abrir la fuente del recurso en una nueva pestaña.</p>
-                    </div>
+        <section id="componentes">
+            <h2>Listas y Tipografía</h2>
+            <p>Este es un párrafo básico que muestra la tipografía predeterminada y el espacio de lectura.</p>
+            
+            <div class="lists-wrapper" style="margin-top: 1.5rem;">
+                <div>
+                    <h3>Lista Desordenada (ul)</h3>
+                    <ul class="primer-lista"></ul>
+                    <button id="btn-ant" class="ant"><</button>
+                    <span class="contador-pag">Pag 1</span>
+                    <button id="btn-sig" class="sig">></button>
                 </div>
-
-                <!-- Tarjeta 2 -->
-                <div class="card">
-                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
-                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
-                    </a>
-                    <div class="card-body">
-                        <h3>Tarjeta 2</h3>
-                        <p>Las tarjetas utilizan CSS Grid para organizarse dinámicamente según el tamaño de pantalla.</p>
-                    </div>
+                <div>
+                    <h3>Lista Ordenada (ol)</h3>
+                    <olv class="segunda-lista">
+                        <li>Primer paso</li>
+                        <li>Segundo paso</li>
+                        <li>Tercer paso</li>
+                    </ol>
                 </div>
+            </div>
+        </section>
 
-                <!-- Tarjeta 3 -->
-                <div class="card">
-                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
-                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
-                    </a>
-                    <div class="card-body">
-                        <h3>Tarjeta 3</h3>
-                        <p>Contenedores estructurados mediante divs con bordes redondeados y efectos hover.</p>
-                    </div>
-                </div>
-
+        <!-- 4. SECCIÓN DE BOTONES -->
+        <section class="lista-botones">
+            <h2>Botones e Interacción</h2>
+            <p>Diferentes tipos de botones y enlaces de acción:</p>
+            <div class="btn-group">
+                <button class="btn btn-primary">Botón Primario</button>
+                <button class="btn btn-secondary">Botón Secundario</button>
+                <a href="https://www.lipsum.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Enlace Externo</a>
             </div>
         </section>
 

@@ -14,7 +14,6 @@
         <a href="#" class="logo">MiSitioWeb</a>
         <ul class="nav-links">
             <li><a href="#inicio" class="active">Inicio</a></li>
-            <li><a href="./admin.html">Pagina de administrador</a></li>
             <li><a href="./programas.html">Pagina de programas</a></li>
             <button id="btn-admin" class="btn">☰</button>
         </ul>
@@ -29,39 +28,7 @@
         </header>
 
         <!-- 3. SECCIÓN DE TEXTO Y LISTAS -->
-        <section id="componentes">
-            <h2>Listas y Tipografía</h2>
-            <p>Este es un párrafo básico que muestra la tipografía predeterminada y el espacio de lectura.</p>
-            
-            <div class="lists-wrapper" style="margin-top: 1.5rem;">
-                <div>
-                    <h3>Lista Desordenada (ul)</h3>
-                    <ul class="primer-lista"></ul>
-                    <button id="btn-ant" class="ant"><</button>
-                    <span class="contador-pag">Pag 1</span>
-                    <button id="btn-sig" class="sig">></button>
-                </div>
-                <div>
-                    <h3>Lista Ordenada (ol)</h3>
-                    <olv class="segunda-lista">
-                        <li>Primer paso</li>
-                        <li>Segundo paso</li>
-                        <li>Tercer paso</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. SECCIÓN DE BOTONES -->
-        <section class="lista-botones">
-            <h2>Botones e Interacción</h2>
-            <p>Diferentes tipos de botones y enlaces de acción:</p>
-            <div class="btn-group">
-                <button class="btn btn-primary">Botón Primario</button>
-                <button class="btn btn-secondary">Botón Secundario</button>
-                <a href="https://www.lipsum.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Enlace Externo</a>
-            </div>
-        </section>
+        
 
         <!-- 5. SECCIÓN GRID Y TARJETAS (DIVS + IMÁGENES CON LINKS) -->
         <section id="grid">
@@ -100,42 +67,14 @@
                         <p>Contenedores estructurados mediante divs con bordes redondeados y efectos hover.</p>
                     </div>
                 </div>
-
+                <button id="btn-agregar" class="agregar">Agregar Programa</button>
+                <button id="btn-editar" class="editar">Editar Programas</button>
             </div>
-        </section>
-
-        <!-- 6. TABLAS -->
-        <section>
-            <h2>Tabla de Datos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Rol</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>Usuario Ejemplo</td>
-                        <td>Desarrollador</td>
-                        <td>Activo</td>
-                    </tr>
-                    <tr>
-                        <td>02</td>
-                        <td>Diseñador Base</td>
-                        <td>UI/UX</td>
-                        <td>Pendiente</td>
-                    </tr>
-                </tbody>
-            </table>
         </section>
 
         <!-- 7. FORMULARIOS DE ENTRADA -->
         <section id="contacto">
-            <h2>Formulario Básico</h2>
+            <h2>Desea registrarse?</h2>
             <form action="#" method="POST" onsubmit="event.preventDefault();">
                 <div class="form-group">
                     <label for="nombre">Nombre Completo:</label>
@@ -148,8 +87,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea name="Mensaje" id="mensaje" class="form-control" rows="4" placeholder="Escribe un mensaje..."></textarea>
+                    <label for="password">Contraseña:</label>
+                    <input name="Password" type="text" id="password" class="form-control" placeholder="Password">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Enviar Formulario</button>
@@ -163,6 +102,5 @@
         <p>&copy; 2026 MiSitioWeb. Plantilla base para desarrollo e integración JS.</p>
     </footer>
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/elem_lista.js"></script>
 </body>
 </html>
