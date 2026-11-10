@@ -33,44 +33,20 @@
         <!-- 5. SECCIÓN GRID Y TARJETAS (DIVS + IMÁGENES CON LINKS) -->
         <section id="grid">
             <h2>Cuadrícula (Grid) y Tarjetas de Contenido</h2>
-            <div class="grid-container">
-                
-                <!-- Tarjeta 1 -->
-                <div class="card">
-                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
-                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
-                    </a>
-                    <div class="card-body">
-                        <h3>Tarjeta 1</h3>
-                        <p>Haz clic en la imagen superior para abrir la fuente del recurso en una nueva pestaña.</p>
-                    </div>
+            <div class="programas-container" id="programas-container"></div>
+             <div class="btn-group" id="admin-controls" style="display: none;">
+                    <button id="btn-add" class="add">Agregar Programa</button>
+                    <button id="btn-edit" class="edit">Editar Programas</button>
                 </div>
-
-                <!-- Tarjeta 2 -->
-                <div class="card">
-                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
-                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
-                    </a>
-                    <div class="card-body">
-                        <h3>Tarjeta 2</h3>
-                        <p>Las tarjetas utilizan CSS Grid para organizarse dinámicamente según el tamaño de pantalla.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 3 -->
-                <div class="card">
-                    <a href="assets/images.jpg" target="_blank" class="card-img-link">
-                        <img src="assets/images.jpg" alt="Ejemplo de tarjeta">
-                    </a>
-                    <div class="card-body">
-                        <h3>Tarjeta 3</h3>
-                        <p>Contenedores estructurados mediante divs con bordes redondeados y efectos hover.</p>
-                    </div>
-                </div>
-                <button id="btn-agregar" class="agregar">Agregar Programa</button>
-                <button id="btn-editar" class="editar">Editar Programas</button>
+            <div>
+                <button id="btn-ant" class="ant"><</button>
+                <span class="contador-pag">Pag 1</span>
+                <button id="btn-sig" class="sig">></button>
             </div>
         </section>
+
+
+
 
         <!-- 7. FORMULARIOS DE ENTRADA -->
         <section id="contacto">
@@ -95,6 +71,10 @@
             </form>
         </section>
 
+
+ 
+
+
     </div>
 
     <!-- 8. PIE DE PÁGINA -->
@@ -102,5 +82,6 @@
         <p>&copy; 2026 MiSitioWeb. Plantilla base para desarrollo e integración JS.</p>
     </footer>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/elem_lista.js"></script>
 </body>
 </html>
