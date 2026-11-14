@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla Base HTML5</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 1. NAVBAR DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <a href="#" class="logo">MiSitioWeb</a>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="./index.html">Pagina principal</a></li>
+            <button id="btn-admin" class="btn">☰</button>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- 2. HEADER / HERO -->
+        <header class="hero" id="inicio">
+            <h1 class="titulo">Estructura Base HTML & CSS</h1>
+            <p>Una plantilla limpia con todos los elementos HTML esenciales visualmente estilizados.</p>
+        </header>
+
+        <!-- 5. SECCIÓN GRID Y TARJETAS (DIVS + IMÁGENES CON LINKS) -->
+        <section id="componentes">
+            <h2>Listas y Tipografía</h2>
+            <p>Este es un párrafo básico que muestra la tipografía predeterminada y el espacio de lectura.</p>
+            
+            <div class="lists-wrapper" style="margin-top: 1.5rem;">
+                <div>
+                    <h3>Lista Desordenada (ul)</h3>
+                    <ul class="primer-lista"></ul>
+                    <button id="btn-ant" class="ant"><</button>
+                    <span class="contador-pag">Pag 1</span>
+                    <button id="btn-sig" class="sig">></button>
+                </div>
+            </div>
+        </section>
+
+        
+
+
+    <!-- 8. PIE DE PÁGINA -->
+    <footer class = "footer" id="footer">
+        <p>&copy; 2026 MiSitioWeb. Plantilla base para desarrollo e integración JS.</p>
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
