@@ -276,3 +276,37 @@ font-size: 0.9rem;
 border-top: 1px solid var(--border-color);
 margin-top: 3rem;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+.charts-wrapper {
+  display: grid;
+  /* Crea tantas columnas como entren, con un ancho mínimo de 450px cada una */
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px; /* Ampliamos el límite máximo para aprovechar el ancho de pantalla */
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.chart-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Evita que Chart.js desborde la tarjeta al redimensionar la ventana */
+  min-width: 0; 
+}
+
+.chart-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #111111;
+}
