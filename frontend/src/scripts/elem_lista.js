@@ -27,16 +27,6 @@ btnAdmin.addEventListener("click", () =>{
 
 
 function renderizar() {
-    contenedorProgramas.innerHTML = "";
-
-    if (programas.length === 0){
-        contenedorProgramas.innerHTML = "<p>No hay elementos NIGGER</p>";
-        contadorPag.textContent = "Pag 1 de 1";
-        btnAnt.disabled = true;
-        btnSig.disabled = true;
-        return;
-    }
-
     const inicio = (paginaActual - 1) * LIMITE;
     const fin = inicio + LIMITE;
     // Obtenemos solo los ítems del rango actual (ej. del 0 al 5, del 5 al 10, etc.)
@@ -100,9 +90,3 @@ btnSig.addEventListener("click", function() {
 
 
 renderizar();
-
-// editProgramBtn.addEventListener("click", function() {
-
-
-
-// });
