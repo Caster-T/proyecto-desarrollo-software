@@ -50,6 +50,15 @@ selectUsuario.addEventListener("change", vistaPorUsuario);
 function renderizarProgramasVigentes(listaPorVisualizar){
     programasVigentes.innerHTML = "";
 
+
+    if (listaPorVisualizar.length === 0) {
+        programasVigentes.innerHTML = `
+            <p class="empty-state">Este laboratorio no tiene programas activos en este momento.</p>
+        `;
+        return;
+    }
+
+
     listaPorVisualizar.forEach((item) => {
         const card = document.createElement("div");
         card.classList.add("card");
