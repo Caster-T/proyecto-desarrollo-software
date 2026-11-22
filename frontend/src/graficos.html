@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla Base HTML5</title>
-    <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="graficos.css">
 </head>
 <body>
 
-    <!-- 1. NAVBAR DE NAVEGACIÓN -->
+    
     <nav class="navbar">
         <a href="#" class="logo">MiSitioWeb</a>
         <ul class="nav-links">
-            <li><a href="#inicio" class="active">Inicio</a></li>
-            <li><a href="./programas.html">Pagina de programas</a></li>
-            <li><a href="./usuario.html">Pagina de usuario</a></li>
+            <li><a href="#inicio">Inicio</a></li>
             <li><a href="./index.html">Pagina principal</a></li>
+            <li><a href="./programas.html">Pagina de programas</a></li>
+            <li><a href="./graficos.html" class="active">Pagina de graficos</a></li>
+            <li><a href="./usuario.html">Pagina de usuario</a></li>
             <button id="btn-admin" class="btn">☰</button>
         </ul>
     </nav>
 
     
     <div class="charts-wrapper">
-    <!-- Contenedor Gráfico de Barras -->
     <section class="chart-card">
         <h2>Comparativa de pH por Laboratorio (Barras)</h2>
             <canvas id="grafico-barras"></canvas>
         </section>
 
-    <!-- Contenedor Gráfico de Puntos -->
+   
         <section class="chart-card">
             <h2>Dispersión de Plomo en Muestra (Puntos)</h2>
             <canvas id="grafico-puntos"></canvas>

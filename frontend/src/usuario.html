@@ -9,24 +9,26 @@
 </head>
 <body>
 
-    <!-- 1. NAVBAR DE NAVEGACIÓN -->
+
     <nav class="navbar">
         <a href="#" class="logo">MiSitioWeb</a>
+        <div class="user-select">
+            <label for="select-usuario"><strong>Simular Usuario:</strong></label>
+                <select id="select-usuario" style="padding: 0.4rem; border-radius: 6px;">
+                    <option value="TODOS">Todos los laboratorios</option>
+                    <option value="Lab Alpha">Lab Alpha</option>
+                    <option value="Lab Beta">Lab Beta</option>
+                    <option value="Lab Charlie">Lab Charlie</option>
+                    <option value="Lab Gamma">Lab Gamma</option>
+                </select>
+        </div>
+
         <ul class="nav-links">
-            <li><a href="#inicio" class="active">Inicio</a></li>
-            <li><a href="./programas.html">Pagina de programas</a></li>
+            <li><a href="#inicio">Inicio</a></li>
             <li><a href="./index.html">Pagina principal</a></li>
-            <li><a href="./graficos.html">Pagina de graficos</a></li>
-            <div style="margin-bottom: 1.5rem;">
-                <label for="select-usuario"><strong>Simular Usuario:</strong></label>
-                    <select id="select-usuario" style="padding: 0.4rem; border-radius: 6px;">
-                        <option value="TODOS">Todos los laboratorios</option>
-                        <option value="Lab Alpha">Lab Alpha</option>
-                        <option value="Lab Beta">Lab Beta</option>
-                        <option value="Lab Charlie">Lab Charlie</option>
-                        <option value="Lab Gamma">Lab Gamma</option>
-                    </select>
-            </div>
+            <li><a href="./programas.html" >Pagina de programas</a></li>
+            <li><a href="./graficos.html" >Pagina de graficos</a></li>
+            <li><a href="./usuario.html" class="active">Pagina de usuario</a></li>
             <button id="btn-admin" class="btn">☰</button>
             
         </ul>
@@ -51,9 +53,6 @@
     </section>
 
 
-
-
-    <!-- 8. PIE DE PÁGINA -->
     <footer class = "footer" id="footer">
         <p>&copy; 2026 MiSitioWeb. Plantilla base para desarrollo e integración JS.</p>
     </footer>

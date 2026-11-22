@@ -5,12 +5,8 @@ const adminControls = document.getElementById("admin-controls");
 const addProgramBtn = document.querySelector(".add");
 const editProgramBtn = document.querySelector(".edit");
 const contenedorProgramas = document.getElementById("programas-container");
-const btnAnt = document.querySelector(".ant");
-const btnSig = document.querySelector(".sig");
-const contadorPag = document.querySelector(".contador-pag");
 const LIMITE = 3;
 const programas = [];
-let paginaActual = 1;
 let isAdmin = false;
 
 btnAdmin.addEventListener("click", () =>{
@@ -27,12 +23,14 @@ btnAdmin.addEventListener("click", () =>{
 
 
 function renderizar() {
-    const inicio = (paginaActual - 1) * LIMITE;
-    const fin = inicio + LIMITE;
-    // Obtenemos solo los ítems del rango actual (ej. del 0 al 5, del 5 al 10, etc.)
-    const programasPagina = programas.slice(inicio, fin);
+    contenedorProgramas.innerHTML = "";
 
-    programasPagina.forEach((prog) => {
+    if (programas.length === 0){
+        contenedorProgramas.innerHTML = `<p class="empty-state">No hay programas NIGGER</p>`
+        return;
+    }
+
+    programas.forEach((prog) => {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
@@ -48,11 +46,6 @@ function renderizar() {
         contenedorProgramas.appendChild(card);
     });
 
-    const totalPaginas = Math.ceil(programas.length / LIMITE);
-    contadorPag.textContent = `Página ${paginaActual} de ${totalPaginas}`;
-    
-    btnAnt.disabled = (paginaActual === 1);
-    btnSig.disabled = (paginaActual === totalPaginas || totalPaginas === 0);
 };
 
 addProgramBtn.addEventListener("click", () => {
@@ -64,29 +57,10 @@ addProgramBtn.addEventListener("click", () => {
         imagenUrl: "./assets/images.jpg"
     });
     
-
-    paginaActual = Math.ceil(programas.length / LIMITE);
+    if (programas.length >= LIMITE) return;
 
     renderizar();   
 });
-
-
-btnAnt.addEventListener("click", function() {
-    if (paginaActual > 1){
-        paginaActual--;
-        renderizar();
-    }
-});
-
-
-btnSig.addEventListener("click", function() {
-    const totalPaginas = Math.ceil(programas.length / LIMITE);
-    if (paginaActual < totalPaginas){
-        paginaActual++;
-        renderizar();
-    }
-});
-
 
 
 renderizar();

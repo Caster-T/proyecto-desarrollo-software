@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla Base HTML5</title>
-    <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,26 +12,21 @@
     <nav class="navbar">
         <a href="#" class="logo">MiSitioWeb</a>
         <ul class="nav-links">
-            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="./index.html" class="active">Pagina principal</a></li>
             <li><a href="./programas.html">Pagina de programas</a></li>
-            <li><a href="./usuario.html">Pagina de usuario</a></li>
             <li><a href="./graficos.html">Pagina de graficos</a></li>
+            <li><a href="./usuario.html">Pagina de usuario</a></li>
             <button id="btn-admin" class="btn">☰</button>
         </ul>
     </nav>
 
     <div class="container">
 
-        <!-- 2. HEADER / HERO -->
         <header class="hero" id="inicio">
             <h1 class="titulo">Estructura Base HTML & CSS</h1>
             <p>Una plantilla limpia con todos los elementos HTML esenciales visualmente estilizados.</p>
         </header>
 
-        <!-- 3. SECCIÓN DE TEXTO Y LISTAS -->
-        
-
-        <!-- 5. SECCIÓN GRID Y TARJETAS (DIVS + IMÁGENES CON LINKS) -->
         <section id="grid">
             <h2>Cuadrícula (Grid) y Tarjetas de Contenido</h2>
             <div class="programas-container" id="programas-container"></div>
@@ -40,18 +34,10 @@
                     <button id="btn-add" class="add">Agregar Programa</button>
                     <button id="btn-edit" class="edit">Editar Programas</button>
                 </div>
-            <div>
-                <button id="btn-ant" class="ant"><</button>
-                <span class="contador-pag">Pag 1</span>
-                <button id="btn-sig" class="sig">></button>
-            </div>
         </section>
 
 
-
-
-        <!-- 7. FORMULARIOS DE ENTRADA -->
-        <section id="contacto">
+        <section id="usuario">
             <h2>Desea registrarse?</h2>
             <form action="#" method="POST" onsubmit="event.preventDefault();">
                 <div class="form-group">
@@ -72,11 +58,6 @@
                 <button type="submit" class="btn btn-primary">Enviar Formulario</button>
             </form>
         </section>
-
-
- 
-
-
     </div>
 
     <!-- 8. PIE DE PÁGINA -->
