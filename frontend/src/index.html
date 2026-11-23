@@ -30,10 +30,9 @@
         <section id="grid">
             <h2>Cuadrícula (Grid) y Tarjetas de Contenido</h2>
             <div class="programas-container" id="programas-container"></div>
-             <div class="btn-group" id="admin-controls" style="display: none;">
-                    <button id="btn-add" class="add">Agregar Programa</button>
-                    <button id="btn-edit" class="edit">Editar Programas</button>
-                </div>
+            <div class="btn-group" id="admin-controls" style="display: none;">
+                <button id="btn-add" class="add">Agregar Programa</button>
+            </div>
         </section>
 
 
@@ -59,6 +58,35 @@
             </form>
         </section>
     </div>
+
+    
+
+    <dialog id="modal-programa" class="modal">
+        <form id="form-programa" method="dialog">
+            <h3>Nuevo Programa Interlaboratorio</h3>
+            
+            <label for="input-nombre">Nombre del programa:</label>
+            <input type="text" id="input-nombre" required placeholder="Ej: Metales Pesados 2026">
+
+            <label for="input-inicio">Fecha de inicio:</label>
+            <input type="date" id="input-inicio" required>
+
+            <label for="input-fin">Fecha de fin:</label>
+            <input type="date" id="input-fin" required>
+
+            <label for="input-form-img">Imagen del formulario modelo (vista previa):</label>
+            <input type="file" id="input-form-img" accept="image/*" required>
+
+            
+            <button type="button" id="btn-cancelar">Cancelar</button>
+            <button type="submit" id="btn-guardar">Guardar Programa</button>
+            
+        </form>
+    </dialog>
+
+    <dialog id="modal-imagen" class="modal-img">
+        <img id="img-ampliada" src="" alt="Vista previa del formulario" style="max-width: 90vw; max-height: 85vh; display: block; border-radius: 8px;">
+    </dialog>
 
     <!-- 8. PIE DE PÁGINA -->
     <footer class = "footer" id="footer">

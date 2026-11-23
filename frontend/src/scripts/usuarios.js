@@ -22,6 +22,10 @@ const LIMIT = 5;
 let paginaActual = 1;
 // Variables para historial de programas ^
 
+const modalIamgen = document.getElementById("modal-imagen");
+const imagenAmpliada = document.getElementById("img-ampliada")
+//Hacer la iamgen grande y no otra pagina ^
+
 
 function vistaPorUsuario(){
     const usuarioActual = selectUsuario.value;
@@ -35,8 +39,6 @@ function vistaPorUsuario(){
 
     paginaActual = 1;
 
-    // 3. Llamamos a tus funciones pasándoles la lista ya limpia
-    // (También podés filtrar acá mismo por estadoPrograma === "ACTIVO" o "FINALIZADO")
     const vigentes = listaActualFiltrada.filter(item => item.estadoPrograma === "ACTIVO");
     const finalizados = listaActualFiltrada.filter(item => item.estadoPrograma === "FINALIZADO" && item.estadoFormulario === "COMPLETADO");
 
@@ -63,9 +65,7 @@ function renderizarProgramasVigentes(listaPorVisualizar){
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
-        <a href="${item.imagenUrl}" target="_blank" class="card-img-link">
-            <img src="${item.imagenUrl}" alt="${item.programa}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
-        </a>
+        <img class="card-img" src="${item.imagenUrl}" alt="${item.programa}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
         <div class="card-body" style="padding-top: 1rem;">
             <span style="font-size: 0.75rem; background: #e0e7ff; color: #3730a3; padding: 2px 6px; border-radius: 4px; font-weight: bold;">
             ${item.usuario}
@@ -77,8 +77,20 @@ function renderizarProgramasVigentes(listaPorVisualizar){
             <button class="btn" style="width: 100%; margin-top: 0.5rem;">Ver Detalle</button>
         </div>
         `;
+
+
+        const imgCard = card.querySelector(".card-img");
+        imgCard.addEventListener("click", () => {
+            imagenAmpliada.src = item.imagenUrl;
+            modalIamgen.showModal();
+        });
+
+
+
+
         programasVigentes.appendChild(card);
     });
+
 }
 
 
@@ -87,7 +99,6 @@ function renderizarProgramasFinalizados(listaPorVisualizar){
 
     const inicio = (paginaActual - 1) * LIMIT;
     const fin = inicio + LIMIT;
-    // Obtenemos solo los ítems del rango actual (ej. del 0 al 5, del 5 al 10, etc.)
     const programasPagina = listaPorVisualizar.slice(inicio, fin);
     
     programasPagina.forEach((item) =>{
@@ -125,6 +136,12 @@ btnSig.addEventListener("click", function() {
     }
 });
 
+
+modalIamgen.addEventListener("click", (e) => {
+        if (e.target === modalIamgen) modalIamgen.close();
+});
+
 renderizarProgramasVigentes(datosUsuarioMock);
 renderizarProgramasFinalizados(datosUsuarioMock);
 vistaPorUsuario();
+
