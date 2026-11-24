@@ -115,6 +115,10 @@ flex-wrap: wrap;
 margin-top: 1rem;
 }
 
+.btn-display {
+  display: none;
+}
+
 .btn {
 display: inline-block;
 padding: 0.75rem 1.5rem;
@@ -319,4 +323,41 @@ section {
   max-width: 950px; 
   min-width: 320px;
   margin: 2rem auto; 
+}
+
+.modal {
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 420px;
+  margin: auto; /* Lo centra vertical y horizontalmente */
+}
+
+/* Oscurece el resto de la página cuando el modal está abierto */
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal h3,
+.modal label,
+button {
+  user-select: none;
+}
+
+.modal-img {
+  padding: 0;
+  border: none;
+  background: transparent;
+  margin: auto;
+}
+
+.modal-img::backdrop {
+  background: rgba(0, 0, 0, 0.75);
 }

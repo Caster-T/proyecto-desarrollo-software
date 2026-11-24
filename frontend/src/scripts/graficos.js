@@ -6,6 +6,9 @@ const datosSimulados = [
   { laboratorio: "Lab Épsilon", ph: 7.2, plomo: 0.006 }
 ];
 
+const contenedorGraficos = document.getElementById("contenedor-graficos-dinamicos");
+const dataGuardada = JSON.parse(sessionStorage.getItem("resultadosGraficos"));
+
 datosSimulados.sort((a, b) => a.ph - b.ph);
 
 // 2. Separamos los datos para el Gráfico de Barras
@@ -14,59 +17,48 @@ const valoresPh = datosSimulados.map(item => item.ph);
 
 const ctxBarras = document.getElementById("grafico-barras");
 
-new Chart(ctxBarras, {
-  type: "bar",
-  data: {
-    labels: nombresLabs,
-    datasets: [{
-      label: "Valor de pH reportado",
-      data: valoresPh,
-      backgroundColor: "rgba(37, 99, 235, 0.7)",
-      borderColor: "rgb(37, 99, 235)",
-      borderWidth: 1,
-      borderRadius: 6
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: false,
-        min: 5,
-        max: 10
-      }
-    }
-  }
-});
+if (dataGuardada && Object.keys(dataGuardada.analitos).length > 0) {
+    contenedorGraficos.innerHTML = ""; // Limpia los gráficos hardcodeados si hay datos de sesión
 
-// 3. Transformamos los datos a coordenadas {x, y} para el Gráfico de Puntos
-const puntosPlomo = datosSimulados.map((item, index) => ({
-  x: index + 1,
-  y: item.plomo
-}));
+    Object.values(dataGuardada.analitos).forEach((analito, idx) => {
+        // 1. Creamos una tarjeta con su propio <canvas>
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.style.padding = "1rem";
+        card.innerHTML = `
+            <h4 style="margin-bottom: 0.5rem;">${dataGuardada.programa} — ${analito.nombre}</h4>
+            <canvas id="chart-dinamico-${idx}"></canvas>
+        `;
+        contenedorGraficos.appendChild(card);
 
-const ctxPuntos = document.getElementById("grafico-puntos");
+        // 2. Instanciamos Chart.js leyendo la unidad y los puntos directamente del objeto
+        const ctx = document.getElementById(`chart-dinamico-${idx}`);
+        new Chart(ctx, {
+            type: "scatter",
+            data: {
+                datasets: [{
+                    label: `${analito.nombre} (${analito.unidad})`,
+                    data: analito.puntos,
+                    backgroundColor: "rgb(37, 99, 235)",
+                    pointRadius: 7,
+                    pointHoverRadius: 9
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: { display: true, text: "N° de Laboratorio Participante" },
+                        ticks: { stepSize: 1 },
+                        min: 0,
+                        max: 5
+                    },
+                    y: {
+                        title: { display: true, text: analito.unidad },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+}
 
-new Chart(ctxPuntos, {
-  type: "scatter",
-  data: {
-    datasets: [{
-      label: "Concentración de Plomo (mg/L)",
-      data: puntosPlomo,
-      backgroundColor: "rgb(220, 38, 38)",
-      pointRadius: 7,
-      pointHoverRadius: 9
-    }]
-  },
-  options: {
-    scales: {
-      x: {
-        title: { display: true, text: "N° de Laboratorio Participante" },
-        ticks: { stepSize: 1 }
-      },
-      y: {
-        title: { display: true, text: "mg/L" },
-        beginAtZero: true
-      }
-    }
-  }
-});
