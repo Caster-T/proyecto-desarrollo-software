@@ -12,28 +12,15 @@
     <nav class="navbar">
         <a href="#" class="logo">MiSitioWeb</a>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
             <li><a href="./index.html">Pagina principal</a></li>
             <li><a href="./programas.html">Pagina de programas</a></li>
             <li><a href="./graficos.html" class="active">Pagina de graficos</a></li>
             <li><a href="./usuario.html">Pagina de usuario</a></li>
-            <button id="btn-admin" class="btn">☰</button>
         </ul>
     </nav>
 
     
-    <div class="charts-wrapper">
-    <section class="chart-card">
-        <h2>Comparativa de pH por Laboratorio (Barras)</h2>
-            <canvas id="grafico-barras"></canvas>
-        </section>
-
-   
-        <section class="chart-card">
-            <h2>Dispersión de Plomo en Muestra (Puntos)</h2>
-            <canvas id="grafico-puntos"></canvas>
-        </section>
-    </div>
+    <div id="contenedor-graficos-dinamicos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem;"></div>
   
  
 <body>
@@ -42,8 +29,6 @@
         <p>&copy; 2026 MiSitioWeb. Plantilla base para desarrollo e integración JS.</p>
     </footer>
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./scripts/script.js"></script>
     <script src="./scripts/graficos.js"></script>
-    <script src="./scripts/elem_lista.js"></script>
 </body>
 </html>

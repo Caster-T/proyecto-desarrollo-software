@@ -173,6 +173,7 @@ formPrograma.addEventListener("submit", (e) => {
         addProgramBtn.disabled = true;
     }
 
+    sessionStorage.setItem("programasSesion", JSON.stringify(programas));
 });
 
 cancelBtn.addEventListener("click", () => {
