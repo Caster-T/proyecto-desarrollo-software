@@ -38,11 +38,19 @@ if (dataGuardada && Object.keys(dataGuardada.analitos).length > 0) {
             data: {
                 datasets: [{
                     label: `${analito.nombre} (${analito.unidad})`,
-                    data: analito.puntos,
+                    data: analito.puntosA,
                     backgroundColor: "rgb(37, 99, 235)",
                     pointRadius: 7,
                     pointHoverRadius: 9
-                }]
+                },
+                {
+                    label: `Muestra B (${analito.unidad})`,
+                    data: analito.puntosB,
+                    backgroundColor: "rgb(249, 115, 22)",
+                    pointRadius: 7,
+                    pointHoverRadius: 9
+                }
+            ]
             },
             options: {
                 scales: {

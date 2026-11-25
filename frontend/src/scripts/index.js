@@ -102,7 +102,7 @@ function renderizar() {
             dltBtn.addEventListener("click", () => {
 
                 const index = programas.findIndex(p => p.id === prog.id);
-                if (index !== 1){
+                if (index !== -11){
                     programas.splice(index,1);
                 }
                 addProgramBtn.disabled = programas.length >= LIMITE;

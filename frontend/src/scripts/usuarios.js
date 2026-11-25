@@ -23,6 +23,8 @@ const ANALITOS_BASE = [
     { key: "sulfato", nombre: "Sulfato", unidad: "mg SO42-/L", metodo: "9" },
     { key: "sdt", nombre: "Sólidos Disueltos Totales", unidad: "mg/L", metodo: "13" }
 ];
+
+
 //Analitos^
 
 const modalResultados = document.getElementById("modal-resultados");
@@ -55,9 +57,6 @@ const programasFinalizados = document.getElementById("programas-finalizados");
 // let paginaActual = 1;
 // Variables para historial de programas ^
 
-const modalIamgen = document.getElementById("modal-imagen");
-const imagenAmpliada = document.getElementById("img-ampliada")
-//Hacer la iamgen grande y no otra pagina ^
 
 
 function vistaPorUsuario(){
@@ -129,13 +128,17 @@ function renderizarProgramasFinalizados(listaPorVisualizar){
     // const inicio = (paginaActual - 1) * LIMIT;
     // const fin = inicio + LIMIT;
     // const programasPagina = listaPorVisualizar.slice(inicio, fin);
+    if (listaPorVisualizar.length === 0) {
+        programasFinalizados.innerHTML = `<li class="text-muted">No hay informes finalizados para este laboratorio.</li>`;
+        return;
+    }
+
     
     listaPorVisualizar.forEach((item) =>{
         const archivo = document.createElement("li");
-        archivo.innerHTML = `
-        <span>Programa:${item.programa} | </span>
-        <a>Archivo: ${item.pdfUrl}</a>
-        `;
+        archivo.innerHTML = item.pdfUrl
+            ? `<strong>${item.programa}</strong> — <a href="${item.pdfUrl}" target="_blank" class="link-archivo">Descargar informe (${item.pdfUrl.split('/').pop()})</a>`
+            : `<strong>${item.programa}</strong> — <span class="text-muted">Sin archivo disponible</span>`;
         programasFinalizados.appendChild(archivo);
     });
     
@@ -194,19 +197,27 @@ formResultados.addEventListener("submit", (e) => {
 
     ANALITOS_BASE.forEach(a => {
         const inputA = tbodyAnalitos.querySelector(`input[data-key="${a.key}"][data-muestra="A"]`);
+        const inputB = tbodyAnalitos.querySelector(`input[data-key="${a.key}"][data-muestra="B"]`);
         const valorA = parseFloat(inputA.value);
+        const valorB = parseFloat(inputB.value);
 
         // Si el usuario cargó un número válido para ese analito, generamos la serie de 4 laboratorios
         if (!isNaN(valorA)) {
             resultadosPorAnalito[a.key] = {
                 nombre: a.nombre,
                 unidad: a.unidad,
-                puntos: [
+                puntosA:!isNaN(valorA) ? [
                     { x: 1, y: valorA }, // Laboratorio N° 1 (tu carga real)
                     { x: 2, y: valorA }, // Lab 2 (igual para probar)
                     { x: 3, y: valorA }, // Lab 3 (igual para probar)
                     { x: 4, y: valorA }  // Lab 4 (igual para probar)
-                ]
+                ] : [],
+                puntosB: !isNaN(valorB) ? [
+                    { x: 1, y: valorB }, // Laboratorio N° 1 (tu carga real)
+                    { x: 2, y: valorB }, // Lab 2 (igual para probar)
+                    { x: 3, y: valorB }, // Lab 3 (igual para probar)
+                    { x: 4, y: valorB }  // Lab 
+                ] : []
             };
         }
     });
